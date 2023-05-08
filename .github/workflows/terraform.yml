@@ -4,6 +4,7 @@ on: workflow_dispatch
 
 jobs:
    running_terraform_commands:
+            name: 'Terraform'
             runs-on: ubuntu-latest
             env:
                 TF_CMD: -var-file Non-prod/policyA.tfvars -var-file Non-prod/policyB.tfvars 
