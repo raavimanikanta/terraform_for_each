@@ -17,8 +17,8 @@ jobs:
                   run: terraform apply -auto-approve 
                 - name: github ctredentials
                   run: |
-                    git-config --global user.name "raavimanikanta"
-                    git-config --global user.email "raavimani123@gmail.com"
+                    git config --global user.name "raavimanikanta"
+                    git config --global user.email "raavimani123@gmail.com"
                     git add .
                     git commit -m "added state file"
                     git push
