@@ -1,36 +1,7 @@
-# name: terraform-destroy
-
-# on: 
-#   workflow_dispatch
-
-# jobs:
-#     terraform-destroy-job :
-#             name: 'Terraform Destroy'
-#             runs-on: ubuntu-latest
-#             steps:
-#                - name: Get code 
-#                  run: actions/checkout@v3
-#                - name: hashicorp/setup-terraform@v1
-#                - name: terraform init command
-#                  run: terraform init
-#                - name: terraform destroy command
-#                  run: terraform destroy -auto-approve
-#                - name: github credentials
-#                  run: |
-#                    git config --global user.name "raavimanikanta"
-#                    git config --global user.email "raavimani123@gmail.com"
-#                    git add .
-#                    git commit -m "added state file"
-#                    git push
-
 name: Terraform Destroy
-
- 
 
 on:
   workflow_dispatch
-
- 
 
 jobs:
   terraform:
@@ -48,3 +19,11 @@ jobs:
 
       - name: Terraform destroy
         run: terraform destroy -auto-approve
+      - name: github credentials
+        run: |
+           git config --global user.name "raavimanikanta"
+           git config --global user.email "raavimani123@gmail.com"
+           git add .
+           git commit -m "added state file"
+           git push        
+        
