@@ -1,0 +1,18 @@
+name: Terraform-apply
+
+on: workflow_dispatch
+
+jobs:
+   running_terraform_commands:
+            env:
+             TF_CMD: terraform apply -var-file "Non-prod/policyA.tfvars" -var-file  "Non-prod/policyB.tfvars" 
+            runs-on: ubuntu-latest
+            steps:
+                - name: Get code 
+                  uses: actions/checkout@v3
+                - name: Terraform init command 
+                  run: terraform init
+                - name: Terraform plan command
+                  run: terraform plan $TF_CMD -input=false
+                - name: Terraform apply command
+                  run: terraform apply $TF_CMD -input=false
