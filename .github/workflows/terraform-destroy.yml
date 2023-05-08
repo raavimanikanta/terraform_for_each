@@ -1,0 +1,10 @@
+name: terraform-destroy
+
+on: workflow_dispatch
+
+jobs:
+    terraform-destroy-job:
+            runs-on: ubuntu-latest
+            steps:
+               - name: terraform destroy command
+                 run: terraform destroy
