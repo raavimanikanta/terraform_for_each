@@ -14,16 +14,15 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
       - name: terraform init 
-        id: init
         run: terraform init -reconfigure 
 
       - name: Terraform destroy
         run: terraform destroy -auto-approve
       - name: github credentials
         run: |
-           git config --global user.name "raavimanikanta"
-           git config --global user.email "raavimani123@gmail.com"
-           git add .
-           git commit -m "added state file"
-           git push        
+          git config --global user.name "raavimanikanta"
+          git config --global user.email "raavimani123@gmail.com"
+          git add .
+          git commit -m "added state file"
+          git push        
         
