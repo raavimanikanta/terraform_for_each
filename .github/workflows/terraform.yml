@@ -6,14 +6,14 @@ jobs:
    running_terraform_commands:
             runs-on: ubuntu-latest
             env:
-             TF_CMD: -var-file Non-prod/policyA.tfvars -var-file Non-prod/policyB.tfvars 
+                TF_CMD: -var-file Non-prod/policyA.tfvars -var-file Non-prod/policyB.tfvars 
             
             steps:
                 - name: Get code 
                   uses: actions/checkout@v3
                 - name: Terraform init command 
-                  run: terraform init
+                  run: terraform init 
                 - name: Terraform plan command
                   run: terraform plan $TF_CMD -input=false
                 - name: Terraform apply command
-                  run: terraform apply $TF_CMD -input=false
+                  run: terraform apply $TF_CMD --auto--approve -input=false
