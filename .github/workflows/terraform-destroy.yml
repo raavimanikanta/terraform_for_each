@@ -3,14 +3,17 @@ name: terraform-destroy
 on: workflow_dispatch
 
 jobs:
-    terraform-destroy-job:
+    terraform-destroy-job :
             runs-on: ubuntu-latest
             steps:
+               - name: Get code 
+                 run: actions/checkouts@v3
+               - name: hashicorp/setup-terraform@v1
                - name: terraform init command
                  run: terraform init
                - name: terraform destroy command
                  run: terraform destroy -auto-approve
-               - name: github ctredentials
+               - name: github credentials
                  run: |
                     git config --global user.name "raavimanikanta"
                     git config --global user.email "raavimani123@gmail.com"
