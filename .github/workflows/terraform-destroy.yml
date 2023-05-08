@@ -7,4 +7,4 @@ jobs:
             runs-on: ubuntu-latest
             steps:
                - name: terraform destroy command
-                 run: terraform destroy
+                 run: terraform destroy -auto-approve
