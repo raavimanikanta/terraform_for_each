@@ -1,5 +1,5 @@
 resource "newrelic_one_dashboard" "exampledash" {
-  preserve_permalink = true
+ 
   for_each= var.dashboards_details
   name = each.value["dashboardName"]
   permissions = "public_read_only"
