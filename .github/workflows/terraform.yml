@@ -11,10 +11,13 @@ jobs:
                   uses: actions/checkout@v3
                 - name: Terraform init command 
                   run: terraform init 
+                  working-directory: ./dashboards_using_for_each
                 - name: Terraform plan command
                   run: terraform plan
+                  working-directory: ./dashboards_using_for_each
                 - name: Terraform apply command
-                  run: terraform apply -auto-approve 
+                  run: terraform apply -auto-approve
+                  working-directory: ./dashboards_using_for_each
                 - name: github ctredentials
                   run: |
                     git config --global user.name "raavimanikanta"
