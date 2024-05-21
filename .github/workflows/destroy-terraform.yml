@@ -21,7 +21,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: terraform init 
-        run: terraform init -reconfigure 
+        run: terraform init
         working-directory: ./dashboards_using_for_each
         
       - name: Terraform destroy
