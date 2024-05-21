@@ -15,4 +15,3 @@ jobs:
                   run: terraform plan
                 - name: Terraform apply command
                   run: terraform apply -auto-approve
-         
